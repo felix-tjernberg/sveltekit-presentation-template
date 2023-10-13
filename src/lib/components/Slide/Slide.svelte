@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Oops from "./Oops.svelte"
     import SvelteReligion from "./SvelteReligion/SvelteReligion.svelte"
     import SvelteReligion2 from "./SvelteReligion2/SvelteReligion.svelte"
 
