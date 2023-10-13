@@ -2,6 +2,7 @@
     import { goto } from "$app/navigation"
     import { page } from "$app/stores"
     import { slideTimer } from "$lib/utilities/stores/slideTimer"
+    import { onDestroy, onMount } from "svelte"
 
     const MIN_SLIDE_NUMBER = 1
     const MAX_SLIDE_NUMBER = 20
@@ -11,6 +12,19 @@
     $: allowNextSlide = !(slideNumber >= MAX_SLIDE_NUMBER)
     $: previousSlideUrl = `/slide/${slideNumber - 1}`
     $: nextSlideUrl = `/slide/${slideNumber + 1}`
+
+    $: if ($slideTimer === 0 && allowNextSlide) {
+        goto(nextSlideUrl)
+        slideTimer.reset()
+    }
+
+    onMount(() => {
+        slideTimer.start()
+    })
+    onDestroy(() => {
+        slideTimer.stop()
+        slideTimer.reset()
+    })
 </script>
 
 {$slideTimer}
