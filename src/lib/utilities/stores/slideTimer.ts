@@ -23,7 +23,7 @@ function createSlideTimer() {
                 }
                 return previousValue - 1
             })
-        }, 100) // TODO remeber to change to second instead of 100ms
+        }, 1000)
     }
 
     function reset() {

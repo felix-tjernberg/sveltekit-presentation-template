@@ -1,15 +1,16 @@
 <script lang="ts">
     import Oops from "./Oops.svelte"
-    import Slide1 from "./Slide1.svelte"
+    import SvelteReligion from "./SvelteReligion/SvelteReligion.svelte"
+    import SvelteReligion2 from "./SvelteReligion2/SvelteReligion.svelte"
 
     export let slideNumber: string
 
     function getSlideComponent(slideNumber: string) {
         switch (slideNumber) {
             case "1":
-                return Slide1
-            default:
-                return Oops
+                return SvelteReligion
+            case "2":
+                return SvelteReligion2
         }
     }
 </script>

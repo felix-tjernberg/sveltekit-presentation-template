@@ -19,7 +19,7 @@
     }
 
     onMount(() => {
-        slideTimer.start()
+        // slideTimer.start()
     })
     onDestroy(() => {
         slideTimer.stop()
@@ -53,6 +53,7 @@
         {#if allowPreviousSlide}
             <a href={previousSlideUrl}>Previous</a>
         {/if}
+        <a href="/">back</a>
         {#if allowNextSlide}
             <a href={nextSlideUrl}>Next</a>
         {/if}
