@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Oops from "./Oops.svelte"
     import Slide1 from "./Slide1.svelte"
 
     export let slideNumber: string
@@ -8,7 +9,7 @@
             case "1":
                 return Slide1
             default:
-                return Slide1
+                return Oops
         }
     }
 </script>
