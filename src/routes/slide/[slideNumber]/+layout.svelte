@@ -19,7 +19,7 @@
     }
 
     onMount(() => {
-        // slideTimer.start()
+        slideTimer.start()
     })
     onDestroy(() => {
         slideTimer.stop()
