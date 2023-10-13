@@ -8,6 +8,9 @@ module.exports = {
         ecmaVersion: 2020,
         extraFileExtensions: [".svelte"],
     },
+    rules: {
+        "@typescript-eslint/ban-ts-comment": "off",
+    },
     env: {
         browser: true,
         es2017: true,
