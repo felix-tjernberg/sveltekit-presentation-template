@@ -25,11 +25,30 @@
         }
     }} />
 
-<slot />
+<div class="height-100p grid-stack">
+    <slot />
+    <div id="hover-container">
+        {#if allowPreviousSlide}
+            <a href={previousSlideUrl}>Previous</a>
+        {/if}
+        {#if allowNextSlide}
+            <a href={nextSlideUrl}>Next</a>
+        {/if}
+    </div>
+</div>
 
-{#if allowPreviousSlide}
-    <a href={previousSlideUrl}>Previous</a>
-{/if}
-{#if allowNextSlide}
-    <a href={nextSlideUrl}>Next</a>
-{/if}
+<style>
+    #hover-container {
+        place-self: start center;
+        display: flex;
+        gap: 1em;
+    }
+    #hover-container > a {
+        scale: 0;
+        display: block;
+        transition: scale 0.2s ease-in-out;
+    }
+    #hover-container:hover > a {
+        scale: 1;
+    }
+</style>
