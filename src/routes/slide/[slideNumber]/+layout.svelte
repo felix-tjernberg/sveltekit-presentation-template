@@ -40,24 +40,22 @@
         }
     }} />
 
-<div class="height-100p grid-stack">
-    <slot />
-    <span id="slide-timer">{$slideTimer}</span>
-    <span id="slide-number">{slideNumber}</span>
-    <div id="hover-container">
-        <div>
-            <button on:click={slideTimer.reset}>reset</button>
-            <button on:click={slideTimer.start}>start</button>
-            <button on:click={slideTimer.stop}>stop</button>
-        </div>
-        <div>
-            {#if allowPreviousSlide}
-                <a href={previousSlideUrl}>Previous</a>
-            {/if}
-            {#if allowNextSlide}
-                <a href={nextSlideUrl}>Next</a>
-            {/if}
-        </div>
+<slot />
+<span id="slide-timer">{$slideTimer}</span>
+<span id="slide-number">{slideNumber}</span>
+<div id="hover-container">
+    <div>
+        <button on:click={slideTimer.reset}>reset</button>
+        <button on:click={slideTimer.start}>start</button>
+        <button on:click={slideTimer.stop}>stop</button>
+    </div>
+    <div>
+        {#if allowPreviousSlide}
+            <a href={previousSlideUrl}>Previous</a>
+        {/if}
+        {#if allowNextSlide}
+            <a href={nextSlideUrl}>Next</a>
+        {/if}
     </div>
 </div>
 

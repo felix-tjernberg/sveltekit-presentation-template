@@ -15,6 +15,7 @@ input,
 button,
 textarea,
 select {
+    color: inherit;
     background-color: transparent;
     font: inherit;
     min-height: 48px;
